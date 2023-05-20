@@ -27,6 +27,6 @@ public class PlayerMovement : MonoBehaviour
     }
     void FixedUpdate ()
     {
-        rb.AddForce(movement * moveSpeed * Time.fixedDeltaTime,  ForceMode2D.Impulse);
+         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 }
