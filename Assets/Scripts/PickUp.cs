@@ -25,7 +25,7 @@ public class PickUp : MonoBehaviour
             }
             else
             {   //position + direcao do personagem magnitude = 1, radious, mask
-                Collider2D pickUpItem = Physics2D.OverlapCircle(transform.position + Direction, .4f, pickUpMask);
+                Collider2D pickUpItem = Physics2D.OverlapCircle(transform.position + Direction, .8f, pickUpMask);
                 if (pickUpItem)
                 {
                     itemHolding = pickUpItem.gameObject;
