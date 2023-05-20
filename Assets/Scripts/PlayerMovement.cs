@@ -10,16 +10,24 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
 
     Vector2 movement;
+    private PickUp pickUp;
     
     void Start() {
         rb = gameObject.GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<Animator>();
+        pickUp = gameObject.GetComponent<PickUp>();
+        pickUp.Direction = new Vector2(movement.x, movement.y);
     }
 
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+        
+        if (movement.sqrMagnitude > .1f)
+        {
+            pickUp.Direction = movement.normalized;
+        }
 
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
