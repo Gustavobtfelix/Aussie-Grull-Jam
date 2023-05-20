@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Transform holdSpot;
+    public LayerMask pickUpMask;
+
+    // public Vector3 Direction { get; set; };
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         
